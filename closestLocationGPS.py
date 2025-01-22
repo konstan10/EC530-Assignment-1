@@ -14,7 +14,7 @@ def closestLocationGPS(arr1: List[tuple], arr2: List[tuple]) -> dict:
     Returns:
         dict: dictionary of results, keys are from arr2 and values are from arr1
     """
-    assert len(arr1) > 0 and len(arr2) > 0
+    assert len(arr1) > 0 and len(arr2) > 0, "Neither of the arrays should be empty"
 
     closest_location_map = defaultdict(list)
     for arr1_pair in arr1:
