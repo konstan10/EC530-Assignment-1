@@ -24,12 +24,14 @@ def closestLocationGPS(arr1: List[tuple], arr2: List[tuple]) -> dict:
         for arr2_pair in arr2:
             lat2, lon2 = arr2_pair
 
+            # Formula for calculating distance
             diff_lat = radians(lat2 - lat1)
             diff_lon = radians(lon2 - lon1)
 
             res = sin(diff_lat / 2) ** 2 + cos(radians(lat1)) * cos(radians(lat2)) * sin(diff_lon / 2) ** 2
             res = 2 * atan2(sqrt(res), sqrt(1 - res))
 
+            # Compare and update closest values
             if closest_distance is None:
                 closest_distance = res
                 closest_pair = arr2_pair
