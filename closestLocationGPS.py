@@ -29,7 +29,7 @@ def closestLocationGPS(arr1: List[tuple], arr2: List[tuple]) -> dict:
             diff_lon = radians(lon2 - lon1)
 
             res = sin(diff_lat / 2) ** 2 + cos(radians(lat1)) * cos(radians(lat2)) * sin(diff_lon / 2) ** 2
-            res = 2 * atan2(sqrt(res), sqrt(1 - res))
+            res = atan2(sqrt(res), sqrt(1 - res))
 
             # Compare and update closest values
             if closest_distance is None:
@@ -44,3 +44,10 @@ def closestLocationGPS(arr1: List[tuple], arr2: List[tuple]) -> dict:
         closest_location_map[closest_pair].append(arr1_pair)
     
     return dict(closest_location_map)
+
+if __name__ == "__main__":
+    arr1 = [(-68.53306, -108.09832), (37.7749, -122.4194), (79.75216, 97.65512)]
+    arr2 = [(-5.62852, -144.59028), (34.052235, -118.243683)]
+    
+    result = closestLocationGPS(arr1, arr2)
+    print(result)  

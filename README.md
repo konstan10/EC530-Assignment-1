@@ -1,1 +1,2 @@
 # EC530-Assignment-1
+This module compares two different geo-location arrays to see what points are closest to each other. A dictionary mapping these points to each other is returned. A test example is included in the file.
